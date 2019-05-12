@@ -26,7 +26,28 @@ function simplifyJSON(data) {
 	// Return generated array
 	return box;
 }
-	
+
+// Convert data into an object containing an array where each number corresponds to a block
+function valueEncodeSimple(data) {
+	var output = {
+		'blocks': [],
+		'palette': []
+	};
+	output.blocks = simplifyJSON(data);
+	for (var i = 0; i < output.blocks.length; i ++) {
+		for (var j = 0; j < output.blocks[i].length; j ++) {
+			for (var k = 0; k < output.blocks[i][j].length; k ++) {
+				var block = output.blocks[i][j][k];
+				if (!output.palette.includes(block)) {
+					output.palette.push(block);
+				}
+				output.blocks[i][j][k] = output.palette.indexOf(block);
+			}
+		}
+	}
+	return output;
+}
+
 readline.question('Name of .nbt file to open: ', (name) => {
 	fs.readFile('./' + name + '.nbt', function(error, data) {
 		// Error handling
@@ -45,6 +66,10 @@ readline.question('Name of .nbt file to open: ', (name) => {
 			});
 			// Create simplified array of blocks
 			fs.writeFile(name + '/' + name + '-simplified.json', JSON.stringify(simplifyJSON(data.value), null, "\t"), (err) => {
+				if (err) throw err;
+			});
+			// Create array of blocks by ID
+			fs.writeFile(name + '/' + name + '-values_simple.json', JSON.stringify(valueEncodeSimple(data.value), null, "\t"), (err) => {
 				if (err) throw err;
 			});
 			
