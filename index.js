@@ -48,6 +48,35 @@ function valueEncodeSimple(data) {
 	return output;
 }
 
+// It is essentially a simplification of the default JSON data generated when the .nbt file is parsed
+function valueEncodeComplex(data) {
+	var output = {
+		'blocks': [],
+		'palette': []
+	};
+	
+	var size = data.size.value.value;
+	var box = new Array(size[1]).fill(0).map(
+			(i) => new Array(size[0]).fill(0).map(
+				(j) => new Array(size[2]).fill(0)
+			)
+		);
+	output.blocks = box;
+	
+	data.blocks.value.value.forEach((block) => {
+		var pos = block.pos.value.value;
+		output.blocks[pos[1]][pos[0]][pos[2]] = block.state.value;
+	});
+	data.palette.value.value.forEach((state) => {
+		output.palette.push({
+			'name': state.Name.value,
+			'properties': state.Properties ? state.Properties.value : {}
+		});
+	});
+	
+	return output;
+}
+
 readline.question('Name of .nbt file to open: ', (name) => {
 	fs.readFile('./' + name + '.nbt', function(error, data) {
 		// Error handling
@@ -70,6 +99,10 @@ readline.question('Name of .nbt file to open: ', (name) => {
 			});
 			// Create array of blocks by ID
 			fs.writeFile(name + '/' + name + '-values_simple.json', JSON.stringify(valueEncodeSimple(data.value), null, "\t"), (err) => {
+				if (err) throw err;
+			});
+			// Encode all block states and types as separate numbers
+			fs.writeFile(name + '/' + name + '-values_complex.json', JSON.stringify(valueEncodeComplex(data.value), null, "\t"), (err) => {
 				if (err) throw err;
 			});
 			
