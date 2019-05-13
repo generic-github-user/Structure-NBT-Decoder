@@ -1,0 +1,22 @@
+[
+	[
+		[
+			"minecraft:glowstone",
+			"minecraft:jack_o_lantern"
+		],
+		[
+			"minecraft:jack_o_lantern",
+			"minecraft:glowstone"
+		]
+	],
+	[
+		[
+			"minecraft:prismarine_bricks",
+			"minecraft:blue_stained_glass"
+		],
+		[
+			"minecraft:blue_stained_glass",
+			"minecraft:prismarine_bricks"
+		]
+	]
+]

@@ -1,0 +1,224 @@
+{
+	"size": {
+		"type": "list",
+		"value": {
+			"type": "int",
+			"value": [
+				2,
+				2,
+				2
+			]
+		}
+	},
+	"entities": {
+		"type": "list",
+		"value": {
+			"type": "end",
+			"value": []
+		}
+	},
+	"blocks": {
+		"type": "list",
+		"value": {
+			"type": "compound",
+			"value": [
+				{
+					"pos": {
+						"type": "list",
+						"value": {
+							"type": "int",
+							"value": [
+								0,
+								0,
+								0
+							]
+						}
+					},
+					"state": {
+						"type": "int",
+						"value": 0
+					}
+				},
+				{
+					"pos": {
+						"type": "list",
+						"value": {
+							"type": "int",
+							"value": [
+								1,
+								0,
+								0
+							]
+						}
+					},
+					"state": {
+						"type": "int",
+						"value": 1
+					}
+				},
+				{
+					"pos": {
+						"type": "list",
+						"value": {
+							"type": "int",
+							"value": [
+								0,
+								1,
+								0
+							]
+						}
+					},
+					"state": {
+						"type": "int",
+						"value": 2
+					}
+				},
+				{
+					"pos": {
+						"type": "list",
+						"value": {
+							"type": "int",
+							"value": [
+								1,
+								1,
+								0
+							]
+						}
+					},
+					"state": {
+						"type": "int",
+						"value": 3
+					}
+				},
+				{
+					"pos": {
+						"type": "list",
+						"value": {
+							"type": "int",
+							"value": [
+								0,
+								0,
+								1
+							]
+						}
+					},
+					"state": {
+						"type": "int",
+						"value": 4
+					}
+				},
+				{
+					"pos": {
+						"type": "list",
+						"value": {
+							"type": "int",
+							"value": [
+								1,
+								0,
+								1
+							]
+						}
+					},
+					"state": {
+						"type": "int",
+						"value": 0
+					}
+				},
+				{
+					"pos": {
+						"type": "list",
+						"value": {
+							"type": "int",
+							"value": [
+								0,
+								1,
+								1
+							]
+						}
+					},
+					"state": {
+						"type": "int",
+						"value": 3
+					}
+				},
+				{
+					"pos": {
+						"type": "list",
+						"value": {
+							"type": "int",
+							"value": [
+								1,
+								1,
+								1
+							]
+						}
+					},
+					"state": {
+						"type": "int",
+						"value": 2
+					}
+				}
+			]
+		}
+	},
+	"palette": {
+		"type": "list",
+		"value": {
+			"type": "compound",
+			"value": [
+				{
+					"Name": {
+						"type": "string",
+						"value": "minecraft:glowstone"
+					}
+				},
+				{
+					"Properties": {
+						"type": "compound",
+						"value": {
+							"facing": {
+								"type": "string",
+								"value": "west"
+							}
+						}
+					},
+					"Name": {
+						"type": "string",
+						"value": "minecraft:jack_o_lantern"
+					}
+				},
+				{
+					"Name": {
+						"type": "string",
+						"value": "minecraft:prismarine_bricks"
+					}
+				},
+				{
+					"Name": {
+						"type": "string",
+						"value": "minecraft:blue_stained_glass"
+					}
+				},
+				{
+					"Properties": {
+						"type": "compound",
+						"value": {
+							"facing": {
+								"type": "string",
+								"value": "north"
+							}
+						}
+					},
+					"Name": {
+						"type": "string",
+						"value": "minecraft:jack_o_lantern"
+					}
+				}
+			]
+		}
+	},
+	"DataVersion": {
+		"type": "int",
+		"value": 1952
+	}
+}

@@ -1,0 +1,56 @@
+{
+	"blocks": [
+		[
+			[
+				0,
+				4
+			],
+			[
+				1,
+				0
+			]
+		],
+		[
+			[
+				2,
+				3
+			],
+			[
+				3,
+				2
+			]
+		]
+	],
+	"palette": [
+		{
+			"name": "minecraft:glowstone",
+			"properties": {}
+		},
+		{
+			"name": "minecraft:jack_o_lantern",
+			"properties": {
+				"facing": {
+					"type": "string",
+					"value": "west"
+				}
+			}
+		},
+		{
+			"name": "minecraft:prismarine_bricks",
+			"properties": {}
+		},
+		{
+			"name": "minecraft:blue_stained_glass",
+			"properties": {}
+		},
+		{
+			"name": "minecraft:jack_o_lantern",
+			"properties": {
+				"facing": {
+					"type": "string",
+					"value": "north"
+				}
+			}
+		}
+	]
+}

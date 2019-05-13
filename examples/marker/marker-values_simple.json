@@ -1,0 +1,30 @@
+{
+	"blocks": [
+		[
+			[
+				0,
+				1
+			],
+			[
+				1,
+				0
+			]
+		],
+		[
+			[
+				2,
+				3
+			],
+			[
+				3,
+				2
+			]
+		]
+	],
+	"palette": [
+		"minecraft:glowstone",
+		"minecraft:jack_o_lantern",
+		"minecraft:prismarine_bricks",
+		"minecraft:blue_stained_glass"
+	]
+}
