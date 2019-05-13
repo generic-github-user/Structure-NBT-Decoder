@@ -6,7 +6,10 @@ var fs = require('fs'),
 		input: process.stdin,
 		output: process.stdout
 	});
-
+	
+require('./blocks.js');
+// console.log(blocks);
+	
 // Convert JSON-structured structure data to a simplified version with only an array of blocks
 function simplifyJSON(data) {
 	// Get size information from decoded NBT data
@@ -77,6 +80,23 @@ function valueEncodeComplex(data) {
 	return output;
 }
 
+function allBlockEncoding(data) {
+	var output = {
+		'blocks': [],
+		'palette': blocks
+	};
+	output.blocks = simplifyJSON(data);
+	for (var i = 0; i < output.blocks.length; i ++) {
+		for (var j = 0; j < output.blocks[i].length; j ++) {
+			for (var k = 0; k < output.blocks[i][j].length; k ++) {
+				var block = output.blocks[i][j][k];
+				output.blocks[i][j][k] = output.palette.indexOf(block);
+			}
+		}
+	}
+	return output;
+}
+
 readline.question('Name of .nbt file to open: ', (name) => {
 	fs.readFile('./' + name + '.nbt', function(error, data) {
 		// Error handling
@@ -103,6 +123,10 @@ readline.question('Name of .nbt file to open: ', (name) => {
 			});
 			// Encode all block states and types as separate numbers
 			fs.writeFile(name + '/' + name + '-values_complex.json', JSON.stringify(valueEncodeComplex(data.value), null, "\t"), (err) => {
+				if (err) throw err;
+			});
+			// Global block ID encoding
+			fs.writeFile(name + '/' + name + '-global.json', JSON.stringify(allBlockEncoding(data.value), null, "\t"), (err) => {
 				if (err) throw err;
 			});
 			
